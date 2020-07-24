@@ -1,40 +1,36 @@
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./css/tab.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="./css/tab.css">
+    
 </head>
 <body>
+    <ul class="tabs">
+        <!-- the data tab attribute will select the particular div -->
+        <li data-tab-target="#home" class="active tab">Home</li>
+        <li data-tab-target="#transfer" class="tab">Money Transfer</li>
+        <li data-tab-target="#passbook" class="tab">Passbook</li>        
+    </ul>
 
-<h2>Tab_Components</h2>
-<p>Click on the buttons</p>
-
-<div class="tab">
-    //for loop
-  <button class="tablinks" onclick="openTab(event, 'Home')">Home</button>
-  <button class="tablinks" onclick="openTab(event, 'Passbook')">Passbook</button>
-  <button class="tablinks" onclick="openTab(event, 'Money Transfer')">Money Transfered</button>
-</div>
-
-<div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>welcome user!</p>
-</div>
-
-<div id="Passbook" class="tabcontent">
-  <h3>Passbook</h3>
-  <p>Transaction History.</p> 
-</div>
-
-<div id="Transfer" class="tabcontent">
-  <h3>Money Transfered</h3>
-  <p>Amount transfered.</p>
-</div>
-
-<script src="js/tab.js">
-
-</script>
-   
+    <div class="tab-content">
+        <!-- in order to make home as default active  -->
+        <div id="home" data-tab-content class="active">
+            <h1>Home</h1>
+            <p>This is the home</p>
+        </div>
+        <div id="transfer" data-tab-content>
+            <h1>Money Transfer</h1>
+            <p>Some Information on Money Transfer</p>
+        </div>
+        <div id="passbook" data-tab-content>
+            <h1>Passbook</h1>
+            <p>Some information about transactions</p>
+        </div>
+    </div>
+    <script src="js/tab.js"></script>
+    
 </body>
-</html> 
+</html>
