@@ -1,43 +1,39 @@
-body {
-    font-family: Arial;
- 
+[data-tab-content]{
+    display:none;
 }
 
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    
-    width: 750px;
-    height: 100px;
-    background-image: url(blue_background.jpg); 
-  }
-  
-  /* Style the buttons inside the tab */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
+.active[data-tab-content]{
+    display: block;
+}
+
+body{
+    padding: 16px;
+    margin: 20px;
+} 
+
+.tabs{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+}
+
+.tab{
     cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
+    padding: 10px;
+}
+
+.tab.active{
     background-color: #ccc;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
+}
+
+.tab:hover{
+    background-color: #AAA;
+}
+
+.tab-content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
