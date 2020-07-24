@@ -1,14 +1,22 @@
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace("active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += "active";
-  }
+//  using querySelectorAll that allows to select everything that has a particular selector
+ const tabs= document.querySelectorAll('[data-tab-target]')
+ const tabContents= document.querySelectorAll('[data-tab-content]')
+
+ //to get single tabs
+ tabs.forEach(tab =>{
+     tab.addEventListener('click',()=>{
+        const target = document.querySelector(tab.dataset.tabTarget)
+        tabContents.forEach(tabContent =>{
+            tabContent.classList.remove('active')
+        }) 
+        //in order to make active class only visibe
+        tabs.forEach(tab=>{
+            tab.classList.remove('active')
+        })
+         tab.classList.add('active')
+        // making only the tab that we click on active 
+         target.classList.add('active')
+
+     })
+ })
 
