@@ -1,39 +1,27 @@
-[data-tab-content]{
-    display:none;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank_Api</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div>
+    <div class="container1">
+        <h1>Fetch Bank API</h1>
+    </div>
+    <div class="default-tab">
+      
+     
+    </div>
 
-.active[data-tab-content]{
-    display: block;
-}
-
-body{
-    padding: 16px;
-    margin: 20px;
-} 
-
-.tabs{
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid black;
-}
-
-.tab{
-    cursor: pointer;
-    padding: 10px;
-}
-
-.tab.active{
-    background-color: #ccc;
-}
-
-.tab:hover{
-    background-color: #AAA;
-}
-
-.tab-content {
-    margin-left: 20px;
-    margin-right: 20px;
-}
+<div class="container2">
+  <button  type="submit" class="tab-links" id="getId">Get ID</button>
+  <button type="submit"class="tab-links" id="getName">Get Name</button>
+  <button typr="submit"class="tab-links" id="getEmail">Get Email</button>
+</div>
+</div>
+  <div id="main"></div>
+  <script src="index.js"></script>
+</body>
+</html>
