@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Bank_Api</title>
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./tab.css">
 </head>
 <body>
   <div>
@@ -22,6 +22,6 @@
 </div>
 </div>
   <div id="main"></div>
-  <script src="index.js"></script>
+  <script src="tab.js"></script>
 </body>
 </html>
