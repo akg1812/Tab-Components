@@ -7,6 +7,7 @@ function codeAddress() {
 window.onload = codeAddress;
 const loading=document.querySelector(".loading");
 
+//adding classList
 let ul_index = document.createElement("ul");
 ul_index.classList.add("index");
 
@@ -17,11 +18,12 @@ let ul_email = document.createElement("ul");
 ul_email.classList.add("emails");
 
 
-
+//button for getId
 let b1=document.createElement("button");
     b1.textContent="id";
     root.appendChild(b1);
     b1.addEventListener("click",getId=()=>{
+//fetching id data
 
 let main=null;
     ul_index.textContent="";
@@ -43,22 +45,20 @@ const getListOfIds = (people) => {
         main.appendChild(ul_index);
         loading.style.display="none";
         alert("error");
-        //ul_index.style.display="none";
         ul_name.style.display="none";
         ul_email.style.display="none";
-        //b1.style.display="none";
-       // title.style.display="none";
         
 
 };
 })
 
 
-
+//creating button for name
 let b2=document.createElement("button");
       b2.textContent="Name";
       root.appendChild(b2);
       b2.addEventListener("click",getName=()=>{
+//fetching name data        
 let main=null;  
      ul_name.textContent="";
      main = document.getElementById("main");
@@ -79,18 +79,19 @@ const getListOfNames = (people) =>{
        
         ul_email.style.display = "none";
         ul_index.style.display="none";
-        //b2.style.display="none";
+       
        
        
 };
 })
 
-
+//button for getting email
   let b3=document.createElement("button");
         b3.textContent="Email";
         root.appendChild(b3);
         b3.addEventListener("click",getEmail=()=>{
   let main=null;
+  //fetching email data
         ul_email.textContent="";
         main = document.getElementById("main");
         ul_email.style.display = "inline-block";
@@ -110,7 +111,7 @@ const getListOfNames = (people) =>{
         
          ul_name.style.display = "none";
          ul_index.style.display="none";
-        //b3.style.display="none";
+      
       
         
 };
