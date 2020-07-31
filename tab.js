@@ -1,11 +1,10 @@
-//deafult loading of page
+;//deafult loading of page
 function codeAddress() {
  alert("the page is loaded");
- return title.textContent;
- 
+ return title.textContent="Welcome User";
 }
 window.onload = codeAddress;
-const loading=document.querySelector(".loading");
+
 
 //adding classList
 let ul_index = document.createElement("ul");
@@ -22,14 +21,23 @@ ul_email.classList.add("emails");
 let b1=document.createElement("button");
     b1.textContent="id";
     root.appendChild(b1);
-    b1.addEventListener("click",getId=()=>{
-//fetching id data
+
+
+b1.addEventListener("click",getId=()=>{
+
+  const loading=document.querySelector(".loading");
+  loading.textContent="Loading...";
+  loading.style.display="block";
+
 
 let main=null;
-    ul_index.textContent="";
+    ul_index.textContent="Loading....";
+    ul_index.textContent=""
     main = document.getElementById("main");
     ul_index.style.display="inline-block";
-fetch("https://jsonplaceholder.typicode.com/users")
+
+
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((people) =>  getListOfIds(people))
       .catch((err)=> alert(err));
@@ -43,12 +51,12 @@ const getListOfIds = (people) => {
         })
         console.log(ul_index);
         main.appendChild(ul_index);
-        loading.style.display="none";
-        alert("error");
+        alert("error appeared");
         ul_name.style.display="none";
         ul_email.style.display="none";
+        title.style.display="none";
+        loading.style.display="none";
         
-
 };
 })
 
@@ -57,8 +65,16 @@ const getListOfIds = (people) => {
 let b2=document.createElement("button");
       b2.textContent="Name";
       root.appendChild(b2);
-      b2.addEventListener("click",getName=()=>{
-//fetching name data        
+     
+     
+ b2.addEventListener("click",getName=()=>{
+   
+
+const loading=document.querySelector(".loading");
+loading.textContent="Loading...";
+loading.style.display="block";
+
+  
 let main=null;  
      ul_name.textContent="";
      main = document.getElementById("main");
@@ -79,7 +95,8 @@ const getListOfNames = (people) =>{
        
         ul_email.style.display = "none";
         ul_index.style.display="none";
-       
+        title.style.display="none";
+        loading.style.display="none";
        
        
 };
@@ -89,7 +106,15 @@ const getListOfNames = (people) =>{
   let b3=document.createElement("button");
         b3.textContent="Email";
         root.appendChild(b3);
-        b3.addEventListener("click",getEmail=()=>{
+       
+       
+b3.addEventListener("click",getEmail=()=>{
+          
+  
+        const loading=document.querySelector(".loading");
+        loading.textContent="Loading...";
+        loading.style.display="block";
+
   let main=null;
   //fetching email data
         ul_email.textContent="";
@@ -99,7 +124,8 @@ const getListOfNames = (people) =>{
       .then((response) => response.json())
       .then((people) => getListOfNames(people));
 
-  const getListOfNames = (people) =>{
+  
+      const getListOfNames = (people) =>{
         let temp =null;
         people.forEach(person => {
             temp=document.createElement("li");
@@ -111,6 +137,8 @@ const getListOfNames = (people) =>{
         
          ul_name.style.display = "none";
          ul_index.style.display="none";
+         title.style.display="none";
+         loading.style.display="none";
       
       
         
