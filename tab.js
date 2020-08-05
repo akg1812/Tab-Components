@@ -1,9 +1,9 @@
-;//deafult loading of page
-function codeAddress() {
+//deafult loading of page
+const url="https://jsonplaceholder.typicode.com/users";
+codeAddress=()=> {
  alert("the page is loaded");
- return title.textContent="Welcome User";
-}
-window.onload = codeAddress;
+ return title.textContent="Welcome User-we have the ids";
+ }
 
 
 //adding classList
@@ -17,32 +17,32 @@ let ul_email = document.createElement("ul");
 ul_email.classList.add("emails");
 
 
-//button for getId
-let b1=document.createElement("button");
-    b1.textContent="id";
-    root.appendChild(b1);
+
+codeAddress();
+const loading=document.querySelector(".loading");
+loading.textContent="Loading...";
+loading.style.display="block";
 
 
-b1.addEventListener("click",getId=()=>{
-
-  const loading=document.querySelector(".loading");
-  loading.textContent="Loading...";
-  loading.style.display="block";
-
-
+window.onload= ()=>{
+  
 let main=null;
     ul_index.textContent="Loading....";
     ul_index.textContent=""
     main = document.getElementById("main");
     ul_index.style.display="inline-block";
-
-
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((people) =>  getListOfIds(people))
-      .catch((err)=> alert(err));
+ 
+    try{
+    fetch(url)
+      .then(response => response.json())
+      .then(people =>  getListOfIds (people))
+      .catch((err)=> {})
+       
+      throw new Error(error.textContent="Something went wrong");
       
-const getListOfIds = (people) => {
+     
+       
+const getListOfIds = people => {
         let temp =null;
         people.forEach(person => {
             temp=document.createElement("li");
@@ -51,39 +51,39 @@ const getListOfIds = (people) => {
         })
         console.log(ul_index);
         main.appendChild(ul_index);
-        alert("error appeared");
         ul_name.style.display="none";
         ul_email.style.display="none";
-        title.style.display="none";
+        //title.style.display="none";
         loading.style.display="none";
         
-};
-})
-
-
+      }
+    }
+    
+catch(e)
+   {
+     error.textContent="Error:Something went wrong"
+     console.log(e);
+   }
+  }
+   
+  
 //creating button for name
 let b2=document.createElement("button");
       b2.textContent="Name";
       root.appendChild(b2);
      
      
- b2.addEventListener("click",getName=()=>{
-   
+ b2.addEventListener("click", ()=>{
 
-const loading=document.querySelector(".loading");
-loading.textContent="Loading...";
-loading.style.display="block";
-
-  
-let main=null;  
+  let main=null;  
      ul_name.textContent="";
      main = document.getElementById("main");
      ul_name.style.display="inline-block";
-fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((people) => getListOfNames(people));
+fetch(url)
+      .then(response => response.json())
+      .then(people => getListOfNames(people));
 
-const getListOfNames = (people) =>{
+const getListOfNames = people =>{
         let temp =null;
         people.forEach(person => {
             temp=document.createElement("li");
@@ -97,10 +97,13 @@ const getListOfNames = (people) =>{
         ul_index.style.display="none";
         title.style.display="none";
         loading.style.display="none";
+        error.style.display="none";
        
        
 };
 })
+
+
 
 //button for getting email
   let b3=document.createElement("button");
@@ -108,24 +111,19 @@ const getListOfNames = (people) =>{
         root.appendChild(b3);
        
        
-b3.addEventListener("click",getEmail=()=>{
+b3.addEventListener("click", ()=>{
           
-  
-        const loading=document.querySelector(".loading");
-        loading.textContent="Loading...";
-        loading.style.display="block";
-
-  let main=null;
+let main=null;
   //fetching email data
         ul_email.textContent="";
         main = document.getElementById("main");
         ul_email.style.display = "inline-block";
-  fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((people) => getListOfNames(people));
+  fetch(url)
+      .then(response => response.json())
+      .then(people => getListOfEmails(people));
 
   
-      const getListOfNames = (people) =>{
+      const getListOfEmails = people =>{
         let temp =null;
         people.forEach(person => {
             temp=document.createElement("li");
@@ -139,8 +137,11 @@ b3.addEventListener("click",getEmail=()=>{
          ul_index.style.display="none";
          title.style.display="none";
          loading.style.display="none";
-      
+        erro.style.display="none";
+       
       
         
 };
 })
+   
+
