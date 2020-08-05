@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;500&display=swap');
+
+
+
 body{
     background-color:whitesmoke;
+    font-family: Lato,  sans-serif !important;
 }
 
 
 
 .header{
  text-align: center;
- font-family: Arial, Helvetica, sans-serif;
  word-spacing: 20px;
  padding-top: 2em;
  background-image: url(blue_background.jpg);
+ border-radius: 20px;
  display: inline-block;
 flex-direction: column;
  height: 100%;
@@ -28,37 +33,43 @@ h1{
 
 
 #title{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+   
     text-align: center;
     padding-top: 2em;
     font-size: 2em;
     display: block;
 }
 
-
-
 #main{
-    border: 2px solid black;
+    border-radius: 50px ;
     background-color: lightseagreen;
     color:black;
     padding: 30px 28px;
     font-size: 16px;
     margin-top: 2em ;
+    display: block;
 }
+
+ #error{
+     text-align: center;
+    display: block;
+} 
 
 
 
 #root button{
     background-color: lightcoral;
-    border:black;
+    border-radius: 50px;
     color: black;
     padding: 14px 28px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: space-evenly;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 2em;
+    margin-top:1em;
+    margin-right: 2px;
    
 }
 
@@ -71,5 +82,4 @@ ul,p{
     list-style: none;
     display: inline-block;
 }
-
 
